@@ -1,0 +1,471 @@
+1. RAG frameworks / orchestration
+These manage the overall RAG pipeline: ingestion → retrieval → reranking → generation.
+- LangChain
+- LangGraph
+- LlamaIndex
+- Haystack
+- RAGFlow
+- LightRAG
+- txtai
+- DSPy
+- Embedchain
+- FlashRAG
+- R2R
+- RAGLite
+- Kotaemon
+- Quivr
+- Langroid
+- Semantic Kernel
+- Spring AI
+- Pathway
+For production learning, prioritize LangChain + LangGraph, LlamaIndex, Haystack, RAGFlow and DSPy. LangGraph is particularly important because RAG and agent orchestration increasingly overlap. VDF.AI
+2. Document loaders / ingestion / ETL
+For getting PDFs, DOCX, HTML, websites, databases, etc. into your pipeline.
+- Unstructured
+- Docling
+- Apache Tika
+- PyMuPDF
+- pdfplumber
+- pypdf
+- Marker
+- MinerU
+- Pandoc
+- Trafilatura
+- BeautifulSoup
+- Scrapy
+- Playwright
+- Firecrawl OSS
+- Airbyte
+- Apache NiFi
+- Meltano
+- LangChain loaders
+- LlamaIndex readers
+- Haystack converters
+For your advanced RAG learning, Docling + Unstructured + PyMuPDF is a strong combination.
+3. Chunking
+Don't learn only RecursiveCharacterTextSplitter.
+
+Learn:
+- Fixed-size chunking
+- Recursive chunking
+- Sentence chunking
+- Paragraph chunking
+- Markdown/header chunking
+- Semantic chunking
+- Token-based chunking
+- Parent-child chunking
+- Small-to-big retrieval
+- Sliding-window chunking
+- Late chunking
+- Proposition-based chunking
+- Agentic chunking
+- Document-structure/layout-aware chunking
+Useful tools include LangChain text splitters, LlamaIndex node parsers, Chonkie, Docling and Unstructured.
+4. Open embedding models
+Important for fully local RAG:
+- BGE
+- BGE-M3
+- E5
+- multilingual-e5
+- GTE
+- Nomic Embed
+- Jina Embeddings
+- Sentence Transformers
+- Instructor
+- ModernBERT-based embedding models
+Run them with:
+- sentence-transformers
+- Hugging Face Transformers
+- TEI — Text Embeddings Inference
+- ONNX Runtime
+- vLLM where supported
+5. Vector databases / vector search
+Major open-source choices:
+- Qdrant
+- Milvus
+- Weaviate
+- Chroma
+- pgvector
+- FAISS
+- LanceDB
+- Vespa
+- OpenSearch
+- Elasticsearch's open alternatives / search stacks
+- Redis-compatible vector search implementations
+- Typesense
+- Meilisearch
+For your projects, I would learn:
+
+FAISS → Chroma → Qdrant → pgvector → Milvus
+
+That covers local experimentation through serious production architectures.
+6. Sparse retrieval / keyword search
+Learn:
+- BM25
+- BM25S
+- TF-IDF
+- SPLADE
+- Elasticsearch-style lexical search
+- OpenSearch
+- Lucene
+- Tantivy
+- Pyserini
+Your production pipeline can then become:
+
+BM25 + Dense Embedding → RRF → Reranker
+7. Hybrid retrieval
+Important techniques:
+- Dense + sparse
+- BM25 + embedding
+- RRF
+- Weighted fusion
+- Query fusion
+- Multi-query retrieval
+- Metadata filtering
+- Self-query retrieval
+- Parent document retrieval
+- Multi-vector retrieval
+You already have the right direction with BM25 + dense + RRF.
+8. Open-source rerankers
+This is another major area to master.
+- BGE Reranker
+- Jina Reranker models
+- ColBERT
+- ColBERTv2
+- FlashRank
+- RankLLM
+- SentenceTransformers CrossEncoder
+- MonoT5
+- RankT5
+- cross-encoder/MS-MARCO models
+Typical architecture:
+
+Query → retrieve 50 → hybrid/RRF → rerank → top 5 → LLM
+9. Advanced RAG patterns
+You should know:
+- Naive RAG
+- Advanced RAG
+- Modular RAG
+- Hybrid RAG
+- Agentic RAG
+- Self-RAG
+- Corrective RAG / CRAG
+- Adaptive RAG
+- Graph RAG
+- HyDE
+- Multi-query RAG
+- Fusion RAG
+- Parent-child RAG
+- Recursive retrieval
+- Small-to-big retrieval
+- Contextual retrieval
+- Long-context RAG
+- Conversational RAG
+- Multimodal RAG
+- SQL RAG
+- Web RAG
+- Knowledge-graph RAG
+10. Graph RAG / knowledge graphs
+Tools:
+- Microsoft GraphRAG
+- LightRAG
+- Neo4j Community
+- NetworkX
+- Apache AGE
+- Kùzu
+- RDFLib
+- FalkorDB
+- ArangoDB Community
+- Memgraph
+- LlamaIndex Knowledge Graph
+- LangChain graph integrations
+Graph RAG becomes especially useful when questions require relationships and multi-hop reasoning rather than simple similarity search. GitHub
+11. Multimodal RAG
+Learn:
+- ColPali
+- ColQwen
+- CLIP
+- SigLIP
+- Docling
+- MinerU
+- OCR pipelines
+- vision-language models
+- page-image retrieval
+- table retrieval
+- image + text retrieval
+This matters for documents containing tables, diagrams, screenshots, scanned PDFs and charts.
+Agentic AI
+12. Agent frameworks
+Major current choices include:
+- LangGraph
+- CrewAI
+- Pydantic AI
+- Google ADK
+- Microsoft Agent Framework
+- OpenAI Agents SDK
+- Strands Agents
+- smolagents
+- Agno
+- Mastra
+- LlamaIndex Agent Workflows
+- Semantic Kernel
+- Langroid
+LangGraph remains particularly strong for explicit stateful workflows, while Pydantic AI is attractive for typed Python systems and CrewAI for role-oriented multi-agent applications. GitHub
+
+One ecosystem change worth knowing: AutoGen is no longer the tool I'd start a new learning path around; recent 2026 comparisons note Microsoft's move toward Microsoft Agent Framework. Geekflare
+13. Agent architectures
+Don't just learn frameworks. Learn patterns:
+- ReAct
+- Plan-and-Execute
+- Router Agent
+- Supervisor Agent
+- Worker Agents
+- Planner/Executor
+- Reflection
+- Critic Agent
+- Evaluator/Optimizer
+- Sequential agents
+- Parallel agents
+- Hierarchical agents
+- Multi-agent collaboration
+- Human-in-the-loop
+- Event-driven agents
+- Stateful agents
+- Agentic RAG
+- Memory-enabled agents
+14. Tool calling
+Learn tools around:
+- Python functions
+- REST APIs
+- databases
+- SQL
+- vector databases
+- web search
+- browsers
+- filesystem
+- shell
+- code execution
+- MCP
+Agent flow:
+
+User → Agent → Decide → Tool → Result → Reason → Tool/Answer
+15. MCP — Model Context Protocol
+Very useful given what you're already learning.
+
+Learn:
+- MCP Server
+- MCP Client
+- MCP Host
+- Tools
+- Resources
+- Prompts
+- Sampling
+- transports
+- authentication
+- authorization
+- remote MCP
+- tool discovery
+- MCP gateways
+- MCP security
+Implement servers using Python/TypeScript SDKs and FastMCP-style frameworks.
+16. Agent/RAG memory
+Open-source options and techniques:
+- Mem0 OSS
+- Zep-related OSS components
+- Letta
+- LangGraph persistence/checkpoints
+- Redis
+- PostgreSQL
+- SQLite
+- Qdrant
+- knowledge graphs
+And understand:
+
+short-term → conversation → episodic → semantic → long-term memory
+17. RAG evaluation
+This should be a major part of your learning.
+
+Open/open-core tools include:
+- Ragas
+- DeepEval
+- TruLens
+- Arize Phoenix
+- Opik
+- Giskard
+- ARES
+- RAGChecker
+- AutoRAG
+- Tonic Validate
+- continuous-eval
+- Evidently
+Common metrics:
+
+Hit Rate, Precision@K, Recall@K, MRR, MAP, nDCG, Context Precision, Context Recall, Faithfulness, Answer Relevance, Correctness
+
+RAG evaluation should separately evaluate retrieval and generation, rather than relying on one overall score. GitHub
+18. Agent evaluation
+Agent evaluation needs additional metrics:
+- task completion
+- tool selection accuracy
+- tool argument accuracy
+- trajectory correctness
+- step efficiency
+- planning quality
+- goal completion
+- hallucination
+- recovery after tool failure
+- latency
+- token usage
+- cost
+- safety violations
+Useful tools include DeepEval, Ragas, Phoenix, Opik, Langfuse and custom LLM-as-judge pipelines.
+19. Observability / tracing
+Important open/open-core tools:
+- Langfuse
+- Arize Phoenix
+- Opik
+- OpenTelemetry
+- OpenLLMetry
+- OpenInference
+- OpenLIT
+- LangWatch
+- Helicone
+- Prometheus
+- Grafana
+- Loki
+- Tempo
+- Jaeger
+A production setup might look like:
+
+LangGraph → OpenTelemetry → Langfuse/Phoenix → Prometheus → Grafana
+
+Langfuse, Phoenix/OpenInference and OpenTelemetry-style instrumentation are particularly relevant to RAG/agent traces. GitHub
+20. Guardrails / security
+Learn:
+- NeMo Guardrails
+- Guardrails AI
+- LLM Guard
+- Presidio
+- Garak
+- PyRIT
+- DeepTeam
+- Rebuff-style prompt-injection approaches
+Topics:
+
+PII → prompt injection → jailbreak → toxic content → secrets → tool permissions → data leakage → output validation
+21. Structured output / validation
+Especially important for agents:
+- Pydantic
+- Instructor
+- Outlines
+- Guidance
+- JSON Schema
+- constrained decoding
+- grammar-constrained generation
+22. Local open models
+Model families worth understanding include:
+- Llama
+- Qwen
+- Mistral
+- Gemma
+- DeepSeek
+- Phi
+- Granite
+Remember that open weights and open source aren't always the same thing; model licenses need to be checked individually.
+23. Inference engineering
+This connects directly with the vLLM/SGLang area you asked about previously.
+
+Learn:
+- vLLM
+- SGLang
+- Hugging Face TGI
+- llama.cpp
+- Ollama
+- TensorRT-LLM
+- ONNX Runtime
+- Triton Inference Server
+Then concepts:
+
+Continuous batching → KV cache → PagedAttention → prefix caching → quantization → speculative decoding → tensor parallelism → pipeline parallelism
+24. API / serving
+- FastAPI
+- Flask
+- Django
+- gRPC
+- BentoML
+- Ray Serve
+- LitServe
+- Streamlit
+- Gradio
+25. Deployment / MLOps / LLMOps
+Open-source stack:
+- Docker
+- Kubernetes
+- Helm
+- Terraform / OpenTofu
+- Argo CD
+- GitHub Actions alternatives / Jenkins
+- MLflow
+- DVC
+- MinIO
+- Airflow
+- Prefect
+- Dagster
+- Prometheus
+- Grafana
+A strong stack for you
+Instead of trying to learn 100+ tools individually, I'd build one serious project around:
+Documents
+   ↓
+Docling / Unstructured
+   ↓
+Semantic + Parent/Child Chunking
+   ↓
+BGE-M3 Embeddings
+   ↓
+┌───────────────┬──────────────┐
+│ BM25/Sparse   │ Qdrant Dense │
+└───────┬───────┴──────┬───────┘
+        ↓
+       RRF
+        ↓
+BGE Reranker
+        ↓
+Context Compression
+        ↓
+LangGraph
+        ↓
+Agentic RAG
+ ↓       ↓       ↓
+SQL     Web     MCP Tools
+        ↓
+Local/Open Model
+vLLM / SGLang
+        ↓
+FastAPI
+
+Then surround it with:
+Evaluation
+├── Ragas
+├── DeepEval
+└── Phoenix
+
+Observability
+├── Langfuse
+├── OpenTelemetry
+├── Prometheus
+└── Grafana
+
+Security
+├── LLM Guard
+├── Presidio
+└── NeMo Guardrails
+
+Infrastructure
+├── Docker
+├── Kubernetes
+├── Redis
+├── PostgreSQL
+└── MLflow
+
+If your goal is production-level RAG + Agentic AI interviews, I'd prioritize this order:
